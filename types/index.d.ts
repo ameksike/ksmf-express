@@ -66,6 +66,10 @@ declare const _exports: {
     options(...arg: any[]): void;
     register(plugin: any, options: any): any;
     unregister(plugin: any, options: any): any;
+    setDependencies(options: any): any;
+    inject(options: any): any;
+    getMissingDependencies(list: string | string[]): string[];
+    checkDependencies(list: string | string[], ErrorType?: ErrorConstructor): import("ksdp/types/src/integration/Dip");
 };
 export = _exports;
 import ExpressServer = require("./src/ExpressServer");

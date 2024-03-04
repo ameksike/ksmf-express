@@ -44,6 +44,7 @@ class ExpressServer extends ksmf.server.Base {
 
     /**
      * @description add cookie support
+     * @override
      * @param {Object|null} [cookie] 
      * @param {Object|null} [web] 
      */
@@ -54,6 +55,7 @@ class ExpressServer extends ksmf.server.Base {
 
     /**
      * @description add session support
+     * @override
      * @param {Object|null} [config] 
      * @param {Object|null} [web] 
      */
@@ -65,6 +67,7 @@ class ExpressServer extends ksmf.server.Base {
 
     /**
      * @description add Fingerprint support
+     * @override
      * @param {Object|null} [config] 
      * @param {Object|null} [web] 
      */
@@ -76,6 +79,7 @@ class ExpressServer extends ksmf.server.Base {
 
     /**
      * @description add cors support
+     * @override
      * @param {Object|null} [config] 
      * @param {Object|null} [web] 
      */
@@ -89,6 +93,7 @@ class ExpressServer extends ksmf.server.Base {
 
     /**
      * @description publish static files
+     * @override
      * @param {String} url 
      * @param {String} path 
      */
