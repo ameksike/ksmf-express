@@ -27,9 +27,9 @@ class Fingerprint {
                 /**
                  * @type {import('express-fingerprint').useragent}
                  */
-                /*mwFingerprint.useragent,
+                mwFingerprint.useragent,
                 mwFingerprint.acceptHeaders,
-                mwFingerprint.geoip,*/
+                mwFingerprint.geoip,
                 /**
                  * @type {import('./types').TFnFingerprint}
                  */
