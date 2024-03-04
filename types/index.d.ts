@@ -1,0 +1,71 @@
+declare const _exports: {
+    cls: {
+        Server: typeof ExpressServer;
+        Session: typeof import("./src/Session");
+        Fingerprint: typeof import("./src/Fingerprint");
+        Cors: typeof import("./src/Cors");
+        middleware: {
+            cookie: any;
+            session: any;
+            fingerprint: typeof import("express-fingerprint");
+            cors: any;
+        };
+    };
+    name: string;
+    configure(payload?: {
+        web?: any;
+        drv?: any;
+        logger?: any;
+        helper?: any;
+        option?: any;
+        cookie?: any;
+        session?: any;
+    }): Promise<ExpressServer>;
+    web: any;
+    drv: any;
+    initCookie(cookie?: any, web?: any): void;
+    initSession(config?: any, web?: any): void;
+    initFingerprint(config?: any, web?: any): void;
+    initCors(config?: any, web?: any): void;
+    publish(url: string, path: string): void;
+    del(value: string | string[], check?: Function): boolean;
+    set(payload: {
+        route: string;
+        method: string;
+        handler: import("./src/types").TFnHandler;
+        middlewares: any[];
+    }): any;
+    start(payload?: {
+        port?: number;
+        key?: string;
+        cert?: string;
+        host?: string;
+        protocol?: string;
+        secure?: boolean;
+        app?: any;
+        callback?: Function;
+    }): Promise<any>;
+    stop(): void;
+    onError(callback: any): void;
+    onRequest(callback: any): void;
+    onResponse(callback: any): void;
+    on404(callback: any): void;
+    routes(web?: any): any[];
+    helper: any;
+    option: any;
+    cookie: any;
+    session: any;
+    logger: Console;
+    add(...arg: any[]): void;
+    use(...arg: any[]): void;
+    get(...arg: any[]): void;
+    post(...arg: any[]): void;
+    put(...arg: any[]): void;
+    delete(...arg: any[]): void;
+    patch(...arg: any[]): void;
+    options(...arg: any[]): void;
+    register(plugin: any, options: any): any;
+    unregister(plugin: any, options: any): any;
+};
+export = _exports;
+import ExpressServer = require("./src/ExpressServer");
