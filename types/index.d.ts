@@ -25,6 +25,7 @@ declare const _exports: {
     drv: any;
     initCookie(cookie?: any, web?: any): void;
     initSession(config?: any, web?: any): void;
+    session: any;
     initFingerprint(config?: any, web?: any): void;
     initCors(config?: any, web?: any): void;
     publish(url: string, path: string): void;
@@ -54,7 +55,6 @@ declare const _exports: {
     helper: any;
     option: any;
     cookie: any;
-    session: any;
     logger: Console;
     add(...arg: any[]): void;
     use(...arg: any[]): void;

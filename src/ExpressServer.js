@@ -63,6 +63,7 @@ class ExpressServer extends ksmf.server.Base {
         web = web || this.web;
         const sessionManager = new Session();
         config && web?.use(sessionManager.middleware(config));
+        this.session = sessionManager;
     }
 
     /**
