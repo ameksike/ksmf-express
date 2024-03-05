@@ -42,7 +42,7 @@ class Fingerprint {
                 }
             ]
         };
-        return mwFingerprint.default(fingerprintOptions);
+        return mwFingerprint(fingerprintOptions);
     }
 }
 module.exports = Fingerprint;

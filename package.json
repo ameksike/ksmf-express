@@ -1,6 +1,6 @@
 {
   "name": "ksmf-express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Express Js support for KsMf framework",
   "main": "index.js",
   "types": "types/index.d.ts",
@@ -42,7 +42,7 @@
     "express-fingerprint": "^1.2.2",
     "express-session": "^1.18.0",
     "kscryp": "^1.0.18",
-    "ksdp": "^1.2.19",
-    "ksmf": "^1.3.0"
+    "ksdp": "^1.2.20",
+    "ksmf": "^1.3.2"
   }
 }

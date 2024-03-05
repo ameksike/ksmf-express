@@ -23,30 +23,6 @@ declare class ExpressServer extends ExpressServer_base {
         session?: any;
     }): Promise<ExpressServer>;
     /**
-     * @description add cookie support
-     * @param {Object|null} [cookie]
-     * @param {Object|null} [web]
-     */
-    initCookie(cookie?: any | null, web?: any | null): void;
-    /**
-     * @description add session support
-     * @param {Object|null} [config]
-     * @param {Object|null} [web]
-     */
-    initSession(config?: any | null, web?: any | null): void;
-    /**
-     * @description add Fingerprint support
-     * @param {Object|null} [config]
-     * @param {Object|null} [web]
-     */
-    initFingerprint(config?: any | null, web?: any | null): void;
-    /**
-     * @description add cors support
-     * @param {Object|null} [config]
-     * @param {Object|null} [web]
-     */
-    initCors(config?: any | null, web?: any | null): void;
-    /**
      * @description set a route
      * @param {Object} payload
      * @param {String} payload.route

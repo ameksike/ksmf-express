@@ -1,5 +1,4 @@
 name: Publish
-# https://github.com/marketplace/actions/npm-publish
 
 on:
   push:
