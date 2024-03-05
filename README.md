@@ -5,7 +5,7 @@ Plugin to add Express.js support for KsMf.
 **[ExpressJs](https://expressjs.com/)** is a Fast, unopinionated, minimalist web framework for Node.js. Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy. Express provides a thin layer of fundamental web application features, without obscuring Node.js features that you know and love. Many popular frameworks are based on [ExpressJs](https://expressjs.com/).
 
 ## KsMf
-**[KsMf](https://www.npmjs.com/package/ksmf)** is a modular microframework for create minimalistic Web/CLI application or REST API based on [KsDp](https://github.com/ameksike/ksdp/wiki) with support for several web servers or frameworks like [Express Js](https://expressjs.com) and [Fastify](https://fastify.dev), for more information see our [wiki](https://github.com/ameksike/ksmf/wiki).
+**[KsMf](https://www.npmjs.com/package/ksmf)** stands as a modular microframework tailored for crafting minimalist web, CLI applications, or REST APIs. Leveraging the robust capabilities of  [KsDp](https://github.com/ameksike/ksdp/wiki), it extends support across a spectrum of web servers or frameworks like [Express Js](https://expressjs.com), [Fastify](https://fastify.dev), etc. For further information see our [wiki](https://github.com/ameksike/ksmf/wiki).
 
 This library belong to the **Ksike** ecosystem:
 - [KsMf](https://www.npmjs.com/package/ksmf) - Microframework (WEB, REST API, CLI, Proxy, etc)
