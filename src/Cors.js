@@ -34,20 +34,27 @@ class CorsWrapper {
                 return val;
             }
         }
-        let allowedOrigins = config || [];
+        let allowedOrigins = config?.allowed || [];
         if (env?.CORS_ORIGINS) {
             const CORS_ORIGINS = env?.CORS_ORIGINS || "";
             allowedOrigins = allowedOrigins.concat(CORS_ORIGINS.split(','));
         }
         allowedOrigins = allowedOrigins.map(elm => reg(elm));
+        let allowedHeaders = Array.isArray(config?.allowedHeaders) ? config.allowedHeaders : [
+            'Authorization',
+            'X-Requested-With',
+            'Content-Type',
+            'Access-Control-Allow-Headers',
+            'Authorization'
+        ];
         const corsConfig = {
             origin: allowedOrigins.concat('null'),
-            allowedHeaders: ['Authorization', 'X-Requested-With', 'Content-Type', 'Access-Control-Allow-Headers', 'Authorization'],
-            methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-            preflightContinue: false,
-            optionsSuccessStatus: 204,
-            maxAge: 86400,
-            credentials: true,
+            allowedHeaders,
+            methods: config?.methods ?? "GET,HEAD,PUT,PATCH,POST,DELETE",
+            preflightContinue: config?.preflightContinue ?? false,
+            optionsSuccessStatus: config?.successStatus ?? 204,
+            maxAge: config?.maxAge || 86400,
+            credentials: config?.credentials ?? true,
         };
         return cors(corsConfig);
     }
