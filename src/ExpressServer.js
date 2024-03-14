@@ -1,8 +1,8 @@
 /**
- * @author		Antonio Membrides Espinosa
- * @email		tonykssa@gmail.com
- * @date		22/04/2021
- * @copyright  	Copyright (c) 2020-2030
+ * @author      Antonio Membrides Espinosa
+ * @email       tonykssa@gmail.com
+ * @date        22/04/2021
+ * @copyright   Copyright (c) 2020-2030
  * @license    	GPL
  * @version    	1.0
  */
@@ -17,8 +17,23 @@ const Session = require('./Session');
 
 class ExpressServer extends ksmf.server.Base {
 
-    constructor() {
-        super();
+    /**
+     * @description configure the web server
+     * @param {Object} [payload]
+     * @param {Object} [payload.web]
+     * @param {Object} [payload.drv]
+     * @param {Object} [payload.logger]
+     * @param {Object} [payload.helper]
+     * @param {Object} [payload.option]
+     * @param {Object} [payload.cookie]
+     * @param {Object} [payload.static]
+     * @param {Object} [payload.session]
+     */
+    constructor(payload = undefined) {
+        super(payload);
+        this.web = payload?.web || express();
+        this.drv = payload?.drv || express;
+        this.static = payload?.static || { publish: express.static };
         this.name = 'express';
     }
 
@@ -31,12 +46,15 @@ class ExpressServer extends ksmf.server.Base {
      * @param {Object} [payload.helper]
      * @param {Object} [payload.option]
      * @param {Object} [payload.cookie]
+     * @param {Object} [payload.static]
      * @param {Object} [payload.session]
      * @returns {Promise<ExpressServer>} self
      */
     configure(payload) {
-        this.web = payload?.web || express();
-        this.drv = payload?.drv || express;
+        super.configure(payload);
+        this.web = this.web || express();
+        this.drv = this.drv || express;
+        this.static = this.static || { publish: express.static };
         //... Allow body Parser
         this.use(this.drv.urlencoded({ extended: true }));
         return Promise.resolve(this);
