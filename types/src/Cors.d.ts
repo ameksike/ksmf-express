@@ -9,5 +9,5 @@ declare class CorsWrapper {
      * @param {Object|null} config
      * @returns {import('./types').TFnMiddleware} middleware
      */
-    middleware(config: any | null, env?: NodeJS.ProcessEnv): import('./types').TFnMiddleware;
+    middleware(config: any | null, env?: any): import('./types').TFnMiddleware;
 }
