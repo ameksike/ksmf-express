@@ -1,9 +1,20 @@
 {
   "name": "ksmf-express",
-  "version": "1.0.1",
+  "version": "1.2.1",
   "description": "Express Js support for KsMf framework",
-  "main": "index.js",
   "types": "types/index.d.ts",
+  "exports": "./index.js",
+  "main": "./index.js",
+  "type": "commonjs",
+  "files": [
+    "bin/*",
+    "src/*",
+    "cfg/*",
+    "types/*",
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "test": "jest ",
     "types": "npx -p typescript tsc ./index.js --target ES2022 --module commonjs --declaration --allowJs --checkJs --emitDeclarationOnly --esModuleInterop --allowSyntheticDefaultImports --resolveJsonModule --outDir types"
