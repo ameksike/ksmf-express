@@ -1,6 +1,14 @@
+/**
+ * @author      Antonio Membrides Espinosa
+ * @email       tonykssa@gmail.com
+ * @date        22/04/2021
+ * @copyright   Copyright (c) 2020-2050
+ * @license    	GPL
+ * @version    	1.0
+ */
 const ExpressServer = require('./src/ExpressServer');
-module.exports = new (class extends ExpressServer {
-    cls = {
+class ExpressPlugin extends ExpressServer {
+    static cls = {
         Server: ExpressServer,
         Session: require('./src/Session'),
         Fingerprint: require('./src/Fingerprint'),
@@ -12,4 +20,5 @@ module.exports = new (class extends ExpressServer {
             cors: require('cors'),
         }
     };
-});
+};
+module.exports = ExpressPlugin;
