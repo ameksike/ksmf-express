@@ -57,6 +57,7 @@ class ExpressServer extends ksmf.server.Base {
         this.static = this.static || { publish: express.static };
         //... Allow body Parser
         this.use(this.drv.urlencoded({ extended: true }));
+        this.use(express.json());
         return Promise.resolve(this);
     }
 
@@ -146,16 +147,16 @@ class ExpressServer extends ksmf.server.Base {
      * @returns {Object} 
      */
     set(payload) {
-        let { route, middlewares, handler, method } = payload;
+        let { route, middlewares, handler, method = 'use' } = payload;
         try {
             if (!this.web) {
                 return null;
             }
-            let action = this.web[method];
+            let action = this.web[method] || this.web?.use;
             if (!action || !handler || !(handler instanceof Function)) {
                 return null;
             }
-            middlewares = (Array.isArray(middlewares) ? middlewares : [middlewares]) || [];
+            middlewares = (Array.isArray(middlewares) ? middlewares : [middlewares]).filter(mw => mw instanceof Function);
             return action.apply(this.web, [route, ...middlewares, handler]);
         }
         catch (_) {
