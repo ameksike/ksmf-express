@@ -3,8 +3,8 @@
  * @email       tonykssa@gmail.com
  * @date        22/04/2021
  * @copyright   Copyright (c) 2020-2050
- * @license    	GPL
- * @version    	1.0
+ * @license     GPL
+ * @version     1.0
  */
 const ExpressServer = require('./src/ExpressServer');
 class ExpressPlugin extends ExpressServer {
