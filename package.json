@@ -1,6 +1,6 @@
 {
   "name": "ksmf-express",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Express Js support for KsMf framework",
   "types": "types/index.d.ts",
   "exports": "./index.js",
