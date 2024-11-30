@@ -1,6 +1,6 @@
 {
   "name": "ksmf-express",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Express Js support for KsMf framework",
   "types": "types/index.d.ts",
   "exports": "./index.js",
@@ -46,14 +46,14 @@
     "jest": "^26.6.3"
   },
   "dependencies": {
-    "@types/express-serve-static-core": "^4.17.43",
-    "cookie-parser": "^1.4.6",
+    "@types/express-serve-static-core": "^4.19.6",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
-    "express": "^4.18.3",
+    "express": "^4.21.1",
     "express-fingerprint": "^1.2.2",
-    "express-session": "^1.18.0",
+    "express-session": "^1.18.1",
     "kscryp": "^1.0.18",
-    "ksdp": "^1.3.2",
-    "ksmf": "^1.3.7"
+    "ksdp": "^1.4.7",
+    "ksmf": "^1.3.37"
   }
 }
